@@ -1,7 +1,8 @@
 from django.db import models
+from hitcount.models import HitCountMixin
 
 
-class Bulletin(models.Model):
+class Bulletin(models.Model, HitCountMixin):
     title = models.CharField('заголовок', max_length=255)
     description = models.TextField('описание')
     pub_date = models.DateTimeField('опубликовано', auto_now_add=True, null=True)

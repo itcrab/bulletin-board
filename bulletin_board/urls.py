@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^', include('board.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'hitcount/', include('hitcount.urls', namespace='hitcount')),
 ]
