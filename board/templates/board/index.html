@@ -8,25 +8,27 @@
             <li><a href="/{{ bulletin.id }}/">{{ bulletin.title }}</a></li>
         {% endfor %}
         </ul>
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if bulletins.has_previous %}
+                    <a href="?page={{ bulletins.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ bulletins.number }} of {{ bulletins.paginator.num_pages }}.
+                </span>
+
+                {% if bulletins.has_next %}
+                    <a href="?page={{ bulletins.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
     {% else %}
         <p>No polls are available.</p>
     {% endif %}
 
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if bulletins.has_previous %}
-                <a href="?page={{ bulletins.previous_page_number }}">previous</a>
-            {% endif %}
 
-            <span class="current">
-                Page {{ bulletins.number }} of {{ bulletins.paginator.num_pages }}.
-            </span>
-
-            {% if bulletins.has_next %}
-                <a href="?page={{ bulletins.next_page_number }}">next</a>
-            {% endif %}
-        </span>
-    </div>
 
 {% endblock %}
