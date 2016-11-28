@@ -1,0 +1,22 @@
+{% extends 'board/base.html' %}
+
+{% block content %}
+
+    <p>
+        <a href="/">&larr; Back</a>
+    </p>
+
+
+    {% if bulletin %}
+        <h1>{{ bulletin.title }}</h1>
+        <p>{{ bulletin.description }}</p>
+        <p></p>
+        <p>{{ bulletin.pub_date }}</p>
+        <p>{{ bulletin.upd_date }}</p>
+    {% endif %}
+
+    <p>
+        <a href="/">&larr; Back</a>
+    </p>
+
+{% endblock %}
